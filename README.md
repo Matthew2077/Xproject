@@ -9,11 +9,6 @@ Il progetto si pone l'obbiettivo di creare una mini app che permetta la visualiz
 3. Elaborazione dati (da DB / table estrai le info che vuoi, tipo crescita in power etc)
 4. Visualizzazione dati (grafici etc) (vedi R ...)
 
-### Main tasks:
-- strutturare la nuova logica tenendo a mente la "QT class". O forse no... Mi serve un layout probabilmente
-- implementazione grafica. Schemi etc
-- renderlo un eseguibile? Rendilo pronto e magari che sia possibile distribuirlo
-
 
 ## Implementazione grafica: 
 - visualizzazione player: incolla i dati del player attuale, i dati di oggi o della data selezionata.
@@ -24,17 +19,6 @@ Poi visualizza la crescita del player negli ultimi X giorni.
 Interazioni del player: scegliere il player da visualizzare, l'alleanza o il regno. Scegliere il giorno da cui prende i dati.
 
 Extra: pagina per caricamento dati (magari usa quella roba filesystem che hai scaricato)
-
-
-## Possibili aggiunte:
-- guide per Rok
-- tools per call of dragons o Altro
-- sito web con guide e tools
-- tool per fare mail
-- tracciamento Kill T4/T5
-- tracciamento forti
-- collegamento a Google sheet ?
-- chat bot ai= https://chatgpt.com/share/68a357ac-1200-800d-b4b0-c000688c677b
 
 
 
@@ -82,19 +66,6 @@ quando avrò più dati potrò fare crescita totale in 30 giorni, crescita settia
 possibilmente potrei anche capire se ci son stati picchi ? probabilmente.
 
 controllo da fare quando i dati non sono in fila.   
-
-
-**4. VISUALIZZAZIONE:**
-Per quanto riguarda la visualizzazione , sarà visualizzato potenzialmente su un sitoweb in frontend. Si faranno chiamate allo script di elaborazione i think.... 
-
-vedi un po R
-
-
-## idee strambe per dopo:
-ma se tipo da DB mettessi automaticamente tutto su Excel google??? 
-così lo faccio vederera tutti e forse posso far vedere tutto a un sito ... ma idk
-
-
 
 
 
