@@ -25,7 +25,7 @@ import sqlite3
 
 #impostazione logger:
 logger = logging.getLogger(__name__)
-logging.basicConfig(filename='logdata/ROKdataUPLOAD.log', level=logging.INFO)
+logging.basicConfig(filename='ROKdataUPLOAD.log', level=logging.INFO)
 
 
 # Load environment variables
@@ -34,7 +34,7 @@ load_dotenv(dotenv_path="params.env")
 
 # PARAMETERS:
 FOLDER_INPUT = "inputdata"
-FOLDER_LOG = "logdata"
+
 #alliance = os.getenv("alliance")
 kingdom = os.getenv("kingdom")
 datarecord = os.getenv("datarecord")
@@ -44,7 +44,7 @@ player_data = []
 #logger.info(f"uploadTODB: Parameters loaded: {alliance}, {kingdom}, {datarecord} - time: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}")
 
 # Database connection
-con = sqlite3.connect("3829KINGDOM.db")
+con = sqlite3.connect("players3834.db")
 cur = con.cursor()
 
 
