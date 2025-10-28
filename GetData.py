@@ -6,11 +6,11 @@ import sqlite3
 
 # impostazione logger:
 logger = logging.getLogger(__name__)
-logging.basicConfig(filename='logdata/ROKdataUPLOAD.log', level=logging.INFO)
+logging.basicConfig(filename='ROKdataUPLOAD.log', level=logging.INFO)
 logger.info(f"GetData: Starting processing - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
 # Database connection
-con = sqlite3.connect("D29H.db")
+con = sqlite3.connect("players3834.db")
 con.row_factory = sqlite3.Row  # permette di accedere alle colonne per nome
 
 # PARAMETERS:
@@ -146,7 +146,8 @@ def get_alliance_info(table, alliance, datarecord):
     for row in info:
         if row['datarecord'] == datarecord:
             player_ID = row['player_ID']
-
+            # print(alliance_power)
+            # print(row['player_power'])
             alliance_power = alliance_power + row['player_power'] # total power ally
             Nrecords = Nrecords + 1 # numero di record / players
             average_power = alliance_power / Nrecords
@@ -250,11 +251,12 @@ def get_kingdom_info(table, kingdom, datarecord):
 
 
 ## chiamata get player info, dai in input ID e table dove cercare
-table = "D29H_players"
-alliance='D29H'
-datarecord = '2025-08-08'
+table = "players_list"
+alliance='Gz34'
+datarecord = '2025-10-24'
 kingdom = 3829
 player_ID = 202928036
 #get_player_info(table, player_ID)
-get_alliance_info(table, alliance, datarecord)
+info = (get_alliance_info(table, alliance, datarecord))
+print(info)
 #get_kingdom_info(table, kingdom, datarecord)
