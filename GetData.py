@@ -92,6 +92,9 @@ def get_player_info(table, player_ID):
         
        
         yesterday = info[i - 1]
+        print( f"Player ID:", player_ID)
+        print(f"Power Yesterday: ", yesterday["player_power"])
+        print(f"Power Today: ", today["player_power"] )
         daily_growth = today["player_power"] - yesterday["player_power"]
             
         #risultati
@@ -146,8 +149,8 @@ def get_alliance_info(table, alliance, datarecord):
     for row in info:
         if row['datarecord'] == datarecord:
             player_ID = row['player_ID']
-            # print(alliance_power)
-            # print(row['player_power'])
+            #print(player_ID)
+            print(row['player_power'])
             alliance_power = alliance_power + row['player_power'] # total power ally
             Nrecords = Nrecords + 1 # numero di record / players
             average_power = alliance_power / Nrecords
@@ -183,7 +186,7 @@ def get_alliance_info(table, alliance, datarecord):
 
 
 
-    logger.info(alliance_info)
+    print(alliance_info)
     return alliance_info
 
 
@@ -253,7 +256,7 @@ def get_kingdom_info(table, kingdom, datarecord):
 ## chiamata get player info, dai in input ID e table dove cercare
 table = "players_list"
 alliance='Gz34'
-datarecord = '2025-10-24'
+datarecord = '2025-10-30'
 kingdom = 3829
 player_ID = 202928036
 #get_player_info(table, player_ID)
