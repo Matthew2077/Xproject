@@ -17,12 +17,6 @@ import sqlite3
 # - datarecord (data + numero di record di quel giorno);
 
 
-# il programma dovrà elaborare ogni screenshot prendendo i dati necessari: ID, power, name. 
-# ogni screenshot elaborato alimenterà un array dove verranno scritti i dati presi dallo screenshot + i parametri.
-# L'array verrà usato per scrivere nel DB i nuovi dati. 
-
-
-
 #impostazione logger:
 logger = logging.getLogger(__name__)
 logging.basicConfig(filename='ROKdataUPLOAD.log', level=logging.INFO)
@@ -39,7 +33,6 @@ FOLDER_INPUT = "inputdata"
 kingdom = os.getenv("kingdom")
 datarecord = os.getenv("datarecord")
 table = 'players_list'  # Default table name if not set
-pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe" # Path to Tesseract OCR executable
 player_data = []  
 #logger.info(f"uploadTODB: Parameters loaded: {alliance}, {kingdom}, {datarecord} - time: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}")
 
@@ -50,16 +43,21 @@ cur = con.cursor()
 
 # Coordinate for data extraction | Screenshot da PC
 FIELDS = {
-    "player_id": (872, 317, 997, 343), #esempio: (ID: 18443431)
-    "player_name": (770, 339, 1090, 382), #esempio: (Name: SevenOilz)
-    "player_power": (1004, 433, 1164, 464), #esempio: (Power: 143,762,415)
-    "alliance": (789, 433, 836, 457), #esempio: (Alliance: [D29H])
+    "player_name": (953, 255, 1289, 295),
+    "player_power": (1255, 381, 1525, 427),
+    "player_id": (1135, 219, 1270, 247),
 }
 
 # Coordinate di estrazione dati | Screenshot da mobile
 # "player_name": (953, 255, 1289, 295),
 # "player_power": (1255, 381, 1525, 427),
 # "player_id": (1105, 219, 1230, 247),
+
+# --- COORDS PER SCEENSHOT DA PC (così era su Windows)--- 
+    # "player_id": (872, 317, 997, 343), #esempio: (ID: 18443431)
+    # "player_name": (770, 339, 1090, 382), #esempio: (Name: SevenOilz)
+    # "player_power": (1004, 433, 1164, 464), #esempio: (Power: 143,762,415)
+    # "alliance": (789, 433, 836, 457), #esempio: (Alliance: [D29H])
 
 
 # Elaborazione degli screenshot
